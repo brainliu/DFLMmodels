@@ -26,6 +26,10 @@ class mywindow(QtWidgets.QMainWindow,Ui_MainWindow):
         self.outputfilename=None
         self.result_Dengfen=None
         self.models=None
+        self.x11=None
+        self.x12=None
+        self.x13=None
+        self.x14=None
     # 定义槽函数
     def hello(self):
         self.textEdit.setText("hello world")
@@ -33,7 +37,7 @@ class mywindow(QtWidgets.QMainWindow,Ui_MainWindow):
     def plotmap(self):
         self.write_2_text(" 开始画图...\n")
         try:
-            self.models.DFMODELplot(self.result_Dengfen)
+            self.models.DFMODELplot(self.result_Dengfen,self.x11,self.x12,self.x13,self.x14)
             self.write_2_text(" 画图完成...\n")
         except:
             self.write_2_text(" 画图失败...\n")
@@ -65,6 +69,68 @@ class mywindow(QtWidgets.QMainWindow,Ui_MainWindow):
                                                                  )
         self.write_2_text(result_model)
         self.write_2_text("保存参数成功！")
+    def Ftest(self):
+        fileName3, filetype = QFileDialog.getOpenFileName(self,
+                                                          "选取F检验结果文件(CSV格式)", "./", "CSV Files (*.csv)")
+
+        self.write_2_text("F检验文件结果保存在%s，开始计算！"%fileName3)
+        model_names_set=list(set(self.result_Dengfen["b_model_name"].tolist()))
+        NNN=len(model_names_set)
+        modes_t=[]
+        p_values=[]
+        F_statist=[]
+        try:
+            for i in range(NNN):
+                for j in range(i+1,NNN):
+                    temp1_name=model_names_set[i]
+                    temp2_name=model_names_set[j]
+                    values1=self.result_Dengfen[self.result_Dengfen["b_model_name"] == temp1_name]["coef_all"].tolist()
+                    values2=self.result_Dengfen[self.result_Dengfen["b_model_name"] == temp2_name]["coef_all"].tolist()
+                    modes_t.append("%s-%s"%(temp1_name,temp2_name))
+                    F_test_all_values = stats.ttest_ind(values1, values2, equal_var=False)
+                    p_values.append(F_test_all_values.pvalue)
+                    F_statist.append(F_test_all_values.statistic)
+            result_f_test=pd.DataFrame({"a_modes_t":modes_t,"b_p_values":p_values,"c_F_statist":F_statist})
+            result_f_test.to_csv(fileName3)
+            index_out = "模型    p检验值   F检验值"
+            self.write_2_text("\n", 0)
+            self.write_2_text(index_out, 0)
+            for i in range(result_f_test.shape[0]):
+                outfiles="%s     %s     %s"%(result_f_test.iloc[i, 0],result_f_test.iloc[i, 1],result_f_test.iloc[i, 2])
+                self.write_2_text(outfiles, 0)
+            self.write_2_text("F检验计算完成并保存成功！")
+        except:
+            self.write_2_text("F检验计算失败")
+
+    def savepicturepara(self):
+        self.x11 = int(self.comboBox_5.currentText())
+        self.x12 = int(self.comboBox_6.currentText())
+        self.x13 = int(self.comboBox_7.currentText())
+        self.x14 = int(self.comboBox_8.currentText())
+        x1=int(self.comboBox_5.currentText())
+        x2 = int(self.comboBox_6.currentText())
+        x3 = int(self.comboBox_7.currentText())
+        x4 = int(self.comboBox_8.currentText())
+        if x1==0:
+            x1=""
+        else:
+            x1="a*x"
+        if x2==0:
+            x2=""
+        else:
+            x2="b*x^2"
+        if x3==0:
+            x3=""
+        else:
+            x3="b*x^3"
+        if x4==0:
+            x4=""
+        else:
+            x4="b*x^4"
+        result_y="多项式为：%s + %s+ %s + %s  (其中a为常数项估计参数，b为对应变量估计系数)"%(x1,x2,x3,x4)
+        self.write_2_text(result_y)
+        self.write_2_text("保存多项式成功！")
+        pass
     def write_2_text(self,items,flag=1):
         cursor = self.textBrowser_3.textCursor()
         cursor.movePosition(QtGui.QTextCursor.End)
@@ -134,6 +200,10 @@ class DFMODELS():
         self.data_y=self.data[self.new_index[-1]]
         self.confid=confid
         self.savefilenames=savefilename
+        self.x11=None
+        self.x12=None
+        self.x13=None
+        self.x14=None
     def one_lm_modle(self,data_x, data_y, modelname):
         """ #单一的回归模型计算函数
         :param data_x: 输入的数据x
@@ -195,7 +265,7 @@ class DFMODELS():
         result_orinignal.to_csv(self.savefilenames)
         return (result_orinignal)
 
-    def DFMODELplot(self,result_Dengfen):
+    def DFMODELplot(self,result_Dengfen,x11,x12,x13,x14):
         X=self.X
         ori_coef = result_Dengfen[result_Dengfen["b_model_name"] == "modelorinagnal"]["coef_all"].tolist()
         ori_up = result_Dengfen[result_Dengfen["b_model_name"] == "modelorinagnal"]["up_conf_all"].tolist()
@@ -219,10 +289,30 @@ class DFMODELS():
             plt.subplot(int(index_plot))
             x_label = range(self.count + 1)
             variable_x = index_list[modelx]
-            up_config_x = result_Dengfen[result_Dengfen["a_variable_name"] == variable_x]["up_conf_all"].tolist()
-            downconfig_x = result_Dengfen[result_Dengfen["a_variable_name"] == variable_x]["down_conf_all"].tolist()
-            coef_x = result_Dengfen[result_Dengfen["a_variable_name"] == variable_x]["coef_all"].tolist()
+            #需要进行平方处理的置信度上下线以及原来的线
+            up_config_x_1 = result_Dengfen[result_Dengfen["a_variable_name"] == variable_x]["up_conf_all"].tolist()
+            downconfig_x_1 = result_Dengfen[result_Dengfen["a_variable_name"] == variable_x]["down_conf_all"].tolist()
+            coef_x_1 = result_Dengfen[result_Dengfen["a_variable_name"] == variable_x]["coef_all"].tolist()
+            constant_x_1=result_Dengfen[result_Dengfen["a_variable_name"] == "C"]["coef_all"].tolist()
 
+            def magnifi(x,c,y):
+                result=[]
+                for i in range(len(x)):
+                    temp=0
+                    if x11!=0:
+                        temp+=c[i]*x[i]
+                    if x12!=0:
+                        temp+=y[i]*x[i]*x[i]
+                    if x13!=0:
+                        temp+=y[i]*x[i]*x[i]
+                    if x14!=0:
+                        temp+=y[i]*x[i]+x[i]+x[i]
+                    result.append(temp)
+                return result
+
+            up_config_x=magnifi(x_label,constant_x_1,up_config_x_1)
+            downconfig_x=magnifi(x_label,constant_x_1,downconfig_x_1)
+            coef_x=magnifi(x_label,constant_x_1,coef_x_1)
             ori_coef_x = ori_coef[modelx + 1]
             ori_up_x = ori_up[modelx + 1]
             ori_down_x = ori_down[modelx + 1]

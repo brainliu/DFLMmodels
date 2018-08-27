@@ -174,6 +174,11 @@ def F_test():
         #F_test.pvalue F_test.pvalue F_test.statistic
 
 result_Dengfen=denfeng_model(data_x,data_y,N,0.95,count)
+#
+# print(1)
+# DFMODELplot(result_Dengfen,X,index_list)
+#
+# F_test()
 
-print(1)
-DFMODELplot(result_Dengfen,X,index_list)
+# F_test=stats.ttest_ind([1,2,3], [4,5,6], equal_var=False)
+# print (F_test.pvalue,F_test.statistic)

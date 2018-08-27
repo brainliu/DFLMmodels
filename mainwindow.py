@@ -12,11 +12,10 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(939, 570)
-        ##
         self.centralWidget = QtWidgets.QWidget(MainWindow)
         self.centralWidget.setObjectName("centralWidget")
         self.pushButton = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton.setGeometry(QtCore.QRect(10, 70, 71, 28))
+        self.pushButton.setGeometry(QtCore.QRect(10, 70, 91, 28))
         self.pushButton.setObjectName("pushButton")
         self.textBrowser = QtWidgets.QTextBrowser(self.centralWidget)
         self.textBrowser.setGeometry(QtCore.QRect(100, 70, 251, 31))
@@ -25,7 +24,7 @@ class Ui_MainWindow(object):
         self.label.setGeometry(QtCore.QRect(250, 10, 461, 41))
         self.label.setObjectName("label")
         self.pushButton_2 = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton_2.setGeometry(QtCore.QRect(420, 70, 71, 28))
+        self.pushButton_2.setGeometry(QtCore.QRect(390, 70, 101, 28))
         self.pushButton_2.setObjectName("pushButton_2")
         self.comboBox = QtWidgets.QComboBox(self.centralWidget)
         self.comboBox.setGeometry(QtCore.QRect(100, 140, 87, 22))
@@ -75,7 +74,7 @@ class Ui_MainWindow(object):
         self.label_5.setGeometry(QtCore.QRect(230, 480, 151, 20))
         self.label_5.setObjectName("label_5")
         self.textBrowser_3 = QtWidgets.QTextBrowser(self.centralWidget)
-        self.textBrowser_3.setGeometry(QtCore.QRect(10, 220, 611, 251))
+        self.textBrowser_3.setGeometry(QtCore.QRect(10, 210, 591, 261))
         self.textBrowser_3.setObjectName("textBrowser_3")
         self.label_6 = QtWidgets.QLabel(self.centralWidget)
         self.label_6.setGeometry(QtCore.QRect(310, 180, 81, 21))
@@ -93,20 +92,66 @@ class Ui_MainWindow(object):
         self.comboBox_4.addItem("")
         self.comboBox_4.addItem("")
         self.pushButton_3 = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton_3.setGeometry(QtCore.QRect(670, 150, 171, 51))
+        self.pushButton_3.setGeometry(QtCore.QRect(660, 140, 171, 51))
         self.pushButton_3.setStyleSheet("font: 12pt \"Agency FB\";")
         self.pushButton_3.setObjectName("pushButton_3")
         self.pushButton_4 = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton_4.setGeometry(QtCore.QRect(720, 260, 81, 31))
+        self.pushButton_4.setGeometry(QtCore.QRect(730, 390, 121, 31))
         self.pushButton_4.setStyleSheet("font: 75 11pt \"Agency FB\";")
         self.pushButton_4.setObjectName("pushButton_4")
         self.label_7 = QtWidgets.QLabel(self.centralWidget)
-        self.label_7.setGeometry(QtCore.QRect(650, 350, 251, 91))
+        self.label_7.setGeometry(QtCore.QRect(640, 430, 251, 91))
         self.label_7.setObjectName("label_7")
         self.pushButton_5 = QtWidgets.QPushButton(self.centralWidget)
-        self.pushButton_5.setGeometry(QtCore.QRect(520, 150, 81, 31))
+        self.pushButton_5.setGeometry(QtCore.QRect(490, 150, 141, 31))
         self.pushButton_5.setStyleSheet("font: 75 11pt \"Agency FB\";")
         self.pushButton_5.setObjectName("pushButton_5")
+        self.label_10 = QtWidgets.QLabel(self.centralWidget)
+        self.label_10.setGeometry(QtCore.QRect(600, 280, 61, 31))
+        self.label_10.setObjectName("label_10")
+        self.label_11 = QtWidgets.QLabel(self.centralWidget)
+        self.label_11.setGeometry(QtCore.QRect(600, 310, 61, 31))
+        self.label_11.setObjectName("label_11")
+        self.label_12 = QtWidgets.QLabel(self.centralWidget)
+        self.label_12.setGeometry(QtCore.QRect(600, 350, 61, 31))
+        self.label_12.setObjectName("label_12")
+        self.label_13 = QtWidgets.QLabel(self.centralWidget)
+        self.label_13.setGeometry(QtCore.QRect(600, 390, 61, 31))
+        self.label_13.setObjectName("label_13")
+        self.comboBox_5 = QtWidgets.QComboBox(self.centralWidget)
+        self.comboBox_5.setGeometry(QtCore.QRect(650, 280, 51, 22))
+        self.comboBox_5.setObjectName("comboBox_5")
+        self.comboBox_5.addItem("")
+        self.comboBox_5.addItem("")
+        self.comboBox_6 = QtWidgets.QComboBox(self.centralWidget)
+        self.comboBox_6.setGeometry(QtCore.QRect(650, 310, 51, 22))
+        self.comboBox_6.setObjectName("comboBox_6")
+        self.comboBox_6.addItem("")
+        self.comboBox_6.addItem("")
+        self.comboBox_7 = QtWidgets.QComboBox(self.centralWidget)
+        self.comboBox_7.setGeometry(QtCore.QRect(650, 350, 51, 22))
+        self.comboBox_7.setObjectName("comboBox_7")
+        self.comboBox_7.addItem("")
+        self.comboBox_7.addItem("")
+        self.comboBox_8 = QtWidgets.QComboBox(self.centralWidget)
+        self.comboBox_8.setGeometry(QtCore.QRect(650, 390, 51, 22))
+        self.comboBox_8.setObjectName("comboBox_8")
+        self.comboBox_8.addItem("")
+        self.comboBox_8.addItem("")
+        self.label_8 = QtWidgets.QLabel(self.centralWidget)
+        self.label_8.setGeometry(QtCore.QRect(610, 250, 121, 41))
+        self.label_8.setObjectName("label_8")
+        self.pushButton_6 = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButton_6.setGeometry(QtCore.QRect(720, 350, 131, 31))
+        self.pushButton_6.setStyleSheet("font: 75 11pt \"Agency FB\";")
+        self.pushButton_6.setObjectName("pushButton_6")
+        self.pushButton_7 = QtWidgets.QPushButton(self.centralWidget)
+        self.pushButton_7.setGeometry(QtCore.QRect(670, 200, 131, 31))
+        self.pushButton_7.setStyleSheet("font: 12pt \"Agency FB\";")
+        self.pushButton_7.setObjectName("pushButton_7")
+        self.label_9 = QtWidgets.QLabel(self.centralWidget)
+        self.label_9.setGeometry(QtCore.QRect(700, 280, 181, 61))
+        self.label_9.setObjectName("label_9")
         MainWindow.setCentralWidget(self.centralWidget)
         self.menuBar = QtWidgets.QMenuBar(MainWindow)
         self.menuBar.setGeometry(QtCore.QRect(0, 0, 939, 26))
@@ -125,20 +170,22 @@ class Ui_MainWindow(object):
         self.pushButton_5.clicked.connect(MainWindow.savepara)
         self.pushButton_2.clicked.connect(MainWindow.outfiles)
         self.pushButton_3.clicked.connect(MainWindow.modelcal)
+        self.pushButton_6.clicked.connect(MainWindow.savepicturepara)
+        self.pushButton_7.clicked.connect(MainWindow.Ftest)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
         MainWindow.setTabOrder(self.textBrowser, self.pushButton)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
-        self.pushButton.setText(_translate("MainWindow", "选择文件"))
+        self.pushButton.setText(_translate("MainWindow", "1.选择文件"))
         self.textBrowser.setHtml(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">选择模型的初始数据....</p></body></html>"))
         self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#0000ff;\">等分线性回归分析系统(内测版)</span></p></body></html>"))
-        self.pushButton_2.setText(_translate("MainWindow", "结果输出"))
+        self.pushButton_2.setText(_translate("MainWindow", "2.结果输出"))
         self.comboBox.setItemText(0, _translate("MainWindow", "0.99"))
         self.comboBox.setItemText(1, _translate("MainWindow", "0.95"))
         self.comboBox.setItemText(2, _translate("MainWindow", "0.90"))
@@ -175,22 +222,21 @@ class Ui_MainWindow(object):
 "<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">注意：</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ff0000;\">注意：</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">1,变量个数&gt;3</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">2,每一等分的样本量最后大于8个</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">3，计算结果保存在csv文件中</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#0000ff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">操作说明：</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">（附件中有两个文件，一个为test.csv,另外一个为空的result.csv)</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ff0000;\">操作说明：</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">（附件中有三个文件，一个为test.csv,另外一个为空的result.csv，和空的result2.csv 分别用于模型结果和F检验结果)</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">test.csv 文件为3个变量，40条数据，K值建议选取3-5之间</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">1.先点击“选择文件”加载test.csv文件</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">2.再点击“结果输出”加载result.csv文件</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">3.设置置信度、变量个数、分段K值、模型选择</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">4.点击“保存参数”</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">4.点击“保存模型参数”</span></p>\n"
 "<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">5.点击“建立模型并计算”</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">6.点击“结果绘图”</span></p>\n"
-"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#0000ff;\"><br /></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">请各位测试软件bug 欢迎交流</span></p></body></html>"))
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">6.点击“保存绘图参数 ”</span></p>\n"
+"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#0000ff;\">7.点击“结果绘图”                           </span><span style=\" color:#ff5500;\">（按钮上的数字为操作顺序）</span></p>\n"
+"<p style=\"-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; color:#0000ff;\"><br /></p></body></html>"))
         self.label_6.setText(_translate("MainWindow", "分段K值"))
         self.comboBox_4.setItemText(0, _translate("MainWindow", "2"))
         self.comboBox_4.setItemText(1, _translate("MainWindow", "3"))
@@ -201,8 +247,24 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(6, _translate("MainWindow", "8"))
         self.comboBox_4.setItemText(7, _translate("MainWindow", "9"))
         self.comboBox_4.setItemText(8, _translate("MainWindow", "10"))
-        self.pushButton_3.setText(_translate("MainWindow", "建立模型并计算"))
-        self.pushButton_4.setText(_translate("MainWindow", "结果绘图"))
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ff007f;\">本软件为个人开发，请勿商用</span></p><p align=\"center\"><span style=\" color:#ff007f;\">联系人：brian QQ： 406096277</span><br/></p></body></html>"))
-        self.pushButton_5.setText(_translate("MainWindow", "保存参数"))
+        self.pushButton_3.setText(_translate("MainWindow", "4.建立模型并计算"))
+        self.pushButton_4.setText(_translate("MainWindow", "c.结果绘图"))
+        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ff007f;\">本软件为个人开发，请勿商用</span></p><p align=\"center\"><span style=\" color:#ff007f;\">联系人：brian QQ： 406096277</span></p></body></html>"))
+        self.pushButton_5.setText(_translate("MainWindow", "3保存模型参数"))
+        self.label_10.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">X</span></p></body></html>"))
+        self.label_11.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">X</span><span style=\" font-size:10pt; vertical-align:super;\">2</span></p></body></html>"))
+        self.label_12.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">X</span><span style=\" font-size:10pt; vertical-align:super;\">3</span></p></body></html>"))
+        self.label_13.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">X</span><span style=\" font-size:10pt; vertical-align:super;\">4</span></p></body></html>"))
+        self.comboBox_5.setItemText(0, _translate("MainWindow", "1"))
+        self.comboBox_5.setItemText(1, _translate("MainWindow", "0"))
+        self.comboBox_6.setItemText(0, _translate("MainWindow", "1"))
+        self.comboBox_6.setItemText(1, _translate("MainWindow", "0"))
+        self.comboBox_7.setItemText(0, _translate("MainWindow", "0"))
+        self.comboBox_7.setItemText(1, _translate("MainWindow", "1"))
+        self.comboBox_8.setItemText(0, _translate("MainWindow", "0"))
+        self.comboBox_8.setItemText(1, _translate("MainWindow", "1"))
+        self.label_8.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-weight:600;\">a.画图参数设置</span></p><p align=\"center\"><span style=\" font-weight:600;\"><br/></span></p></body></html>"))
+        self.pushButton_6.setText(_translate("MainWindow", "b.保存绘图参数"))
+        self.pushButton_7.setText(_translate("MainWindow", "5.F检验"))
+        self.label_9.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:8pt; font-style:italic; color:#0055ff;\">0表示不保留，1表示保留</span></p><p align=\"center\"><span style=\" font-size:8pt; font-style:italic; color:#0055ff;\">最终决定得到几次多项式</span></p></body></html>"))
 
