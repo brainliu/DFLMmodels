@@ -100,7 +100,7 @@ class Ui_MainWindow(object):
         self.pushButton_4.setStyleSheet("font: 75 11pt \"Agency FB\";")
         self.pushButton_4.setObjectName("pushButton_4")
         self.label_7 = QtWidgets.QLabel(self.centralWidget)
-        self.label_7.setGeometry(QtCore.QRect(640, 430, 251, 91))
+        self.label_7.setGeometry(QtCore.QRect(620, 430, 291, 91))
         self.label_7.setObjectName("label_7")
         self.pushButton_5 = QtWidgets.QPushButton(self.centralWidget)
         self.pushButton_5.setGeometry(QtCore.QRect(490, 150, 141, 31))
@@ -184,7 +184,7 @@ class Ui_MainWindow(object):
 "p, li { white-space: pre-wrap; }\n"
 "</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
 "<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\">选择模型的初始数据....</p></body></html>"))
-        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#0000ff;\">等分线性回归分析系统(内测版)</span></p></body></html>"))
+        self.label.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:18pt; font-weight:600; color:#0000ff;\">等分线性回归分析系统基础版</span></p></body></html>"))
         self.pushButton_2.setText(_translate("MainWindow", "2.结果输出"))
         self.comboBox.setItemText(0, _translate("MainWindow", "0.99"))
         self.comboBox.setItemText(1, _translate("MainWindow", "0.95"))
@@ -249,7 +249,13 @@ class Ui_MainWindow(object):
         self.comboBox_4.setItemText(8, _translate("MainWindow", "10"))
         self.pushButton_3.setText(_translate("MainWindow", "4.建立模型并计算"))
         self.pushButton_4.setText(_translate("MainWindow", "c.结果绘图"))
-        self.label_7.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" color:#ff007f;\">本软件为个人开发，请勿商用</span></p><p align=\"center\"><span style=\" color:#ff007f;\">联系人：brian QQ： 406096277</span></p></body></html>"))
+        self.label_7.setText(_translate("MainWindow", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
+"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
+"p, li { white-space: pre-wrap; }\n"
+"</style></head><body style=\" font-family:\'SimSun\'; font-size:9pt; font-weight:400; font-style:normal;\">\n"
+"<p align=\"center\" style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-weight:600; color:#ff007f;\">联系人：</span><span style=\" color:#ff007f;\">brian </span><span style=\" font-weight:600; color:#ff007f;\">QQ/wechat</span><span style=\" color:#ff007f;\">： 406096277</span></p>\n"
+"<p align=\"center\" style=\" margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" color:#ff007f;\">本软件为个人开发，请勿商用</span></p>\n"
+"<p align=\"center\" style=\"-qt-paragraph-type:empty; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><br /></p></body></html>"))
         self.pushButton_5.setText(_translate("MainWindow", "3保存模型参数"))
         self.label_10.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">X</span></p></body></html>"))
         self.label_11.setText(_translate("MainWindow", "<html><head/><body><p align=\"center\"><span style=\" font-size:10pt;\">X</span><span style=\" font-size:10pt; vertical-align:super;\">2</span></p></body></html>"))
